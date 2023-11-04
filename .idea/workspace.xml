@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40019402-837e-4fd1-a222-46a158382d39" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/database/DatabaseConnectionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/database/JDBConnectionWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/builder/BookBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepositoryMySQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="40019402-837e-4fd1-a222-46a158382d39" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +59,7 @@
       <updated>1698910114772</updated>
       <workItem from="1698910115964" duration="963000" />
       <workItem from="1698941278702" duration="767000" />
-      <workItem from="1699082478222" duration="3928000" />
+      <workItem from="1699082478222" duration="4240000" />
     </task>
     <servers />
   </component>
