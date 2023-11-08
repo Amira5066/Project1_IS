@@ -13,13 +13,20 @@ public class Main {
 
         BookRepository bookRepository = new BookRepositoryMySQL(DatabaseConnectionFactory.getConnectionWrapper(true).getConnection());
 
-        Book book = new BookBuilder()
+        Book book1 = new BookBuilder()
                 .setTitle("Harry Potter")
                 .setAuthor("J.K. Rowling")
                 .setPublishedDate(LocalDate.of(2010, 7, 3))
                 .build();
+        bookRepository.removeAll();
 
-        System.out.println(book);
-        System.out.println(bookRepository.findAll());
+//        System.out.println(bookRepository.findAll());
+//        System.out.println(bookRepository.findById(1L));
+//
+//        Book book2 = new BookBuilder()
+//                .setTitle("Harry Potter")
+//                .setAuthor("J.K. Rowling")
+//                .setPublishedDate(LocalDate.of(2010, 7, 3))
+//                .build();
     }
 }
