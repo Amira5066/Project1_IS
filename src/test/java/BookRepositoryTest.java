@@ -31,19 +31,21 @@ public class BookRepositoryTest {
     @org.junit.jupiter.api.Test
     void findById() {
         BookRepository bookRepository = new BookRepositoryMySQL(DatabaseConnectionFactory.getConnectionWrapper(true).getConnection());
-        Book book = new BookBuilder()
-                .setTitle("Harry Potter")
+        Book book1 = new BookBuilder()
                 .setId(1L)
+                .setTitle("Harry Potter")
                 .setAuthor("J.K. Rowling")
                 .setPublishedDate(LocalDate.of(2010, 7, 3))
                 .build();
         Book book2 = new BookBuilder()
+                .setId(2L)
                 .setTitle("some book")
                 .setAuthor("some author")
                 .setPublishedDate(LocalDate.of(2015, 3, 7))
                 .build();
         assertEquals(Optional.empty(), bookRepository.findById(500L));
-        assertEquals(Optional.of(book), bookRepository.findById(1L));
+        assertEquals(Optional.of(book1).get().toString(), bookRepository.findById(1L).get().toString());
+        assertEquals(Optional.of(book2).get().toString(), bookRepository.findById(2L).get().toString());
     }
 }
 
