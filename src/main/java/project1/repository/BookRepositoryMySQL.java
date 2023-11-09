@@ -81,7 +81,7 @@ public class BookRepositoryMySQL implements BookRepository {
         String sql = "TRUNCATE TABLE book;";
         try {
             Statement statement = connection.createStatement();
-            statement.executeUpdate(sql);
+            statement.execute(sql);
         } catch (SQLException e) {
             e.printStackTrace();
         }
