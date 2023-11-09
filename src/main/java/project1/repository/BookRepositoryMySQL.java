@@ -78,12 +78,10 @@ public class BookRepositoryMySQL implements BookRepository {
 
     @Override
     public void removeAll() {
-        String sql = "DELETE FROM book;";
+        String sql = "TRUNCATE TABLE book;";
         try {
             Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
-            sql = "ALTER TABLE book AUTO_INCREMENT = 0;";
-            statement.execute(sql);
         } catch (SQLException e) {
             e.printStackTrace();
         }
