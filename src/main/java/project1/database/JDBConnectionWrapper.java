@@ -38,6 +38,24 @@ public class JDBConnectionWrapper {
                 ") ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;";
 
         statement.execute(sql);
+
+        sql = "CREATE TABLE IF NOT EXISTS audio_book(" +
+                " id bigint NOT NULL AUTO_INCREMENT," +
+                " runTime bigint NOT NULL," +
+                " FOREIGN KEY (id) REFERENCES book(id), "+
+                " PRIMARY KEY(id)," +
+                " UNIQUE KEY id_UNIQUE(id)" +
+                ") DEFAULT CHARSET=utf8;";
+        statement.execute(sql);
+
+        sql = "CREATE TABLE IF NOT EXISTS ebook(" +
+                " id bigint NOT NULL AUTO_INCREMENT," +
+                " format varchar(10) NOT NULL," +
+                " FOREIGN KEY (id) REFERENCES book(id), "+
+                " PRIMARY KEY(id)," +
+                " UNIQUE KEY id_UNIQUE(id)" +
+                ") DEFAULT CHARSET=utf8;";
+        statement.execute(sql);
     }
 
     public boolean testConnection() throws SQLException {

@@ -1,10 +1,10 @@
 package project1.repository;
 
+import project1.model.AudioBook;
 import project1.model.Book;
 import project1.model.builder.BookBuilder;
 
 import java.sql.*;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +17,7 @@ public class BookRepositoryMySQL implements BookRepository {
     }
 
     private Book getBookFromResultSet(ResultSet resultSet) throws SQLException {
-        return new BookBuilder()
+        return new BookBuilder<>(Book.class)
                 .setId(resultSet.getLong("id"))
                 .setTitle(resultSet.getString("title"))
                 .setAuthor(resultSet.getString("author"))

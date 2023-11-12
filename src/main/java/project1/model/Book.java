@@ -2,8 +2,7 @@ package project1.model;
 import  java.time.LocalDate;
 import java.util.Date;
 
-public class
-Book {
+public class Book {
 
     private Long id;
     private String author;
@@ -44,11 +43,11 @@ Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "Book {" +
                 "id=" + id +
                 ", author='" + author + '\'' +
                 ", title='" + title + '\'' +
                 ", publishedDate=" + publishedDate +
-                '}';
+                " }";
     }
 }

@@ -1,14 +1,16 @@
 package project1.model;
 
-public class AudioBook extends Book {
-    int runTime;
+import project1.model.Book;
 
-    public void setRunTime(int runTime) {
-        this.runTime = runTime;
+public class EBook extends Book {
+    String format;
+
+    public String getFormat() {
+        return format;
     }
 
-    public int getRunTime() {
-        return runTime;
+    public void setFormat(String format) {
+        this.format = format;
     }
 
     @Override
@@ -18,7 +20,7 @@ public class AudioBook extends Book {
                 ", author='" + super.getAuthor() + '\'' +
                 ", title='" + super.getTitle() + '\'' +
                 ", publishedDate=" + super.getPublishedDate() +
-                ", runTime=" + runTime +
+                ", format=" + format +
                 " }";
     }
 }

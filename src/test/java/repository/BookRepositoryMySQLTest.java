@@ -20,13 +20,13 @@ public class BookRepositoryMySQLTest {
     @BeforeAll
     public static void init() {
         bookRepository = new BookRepositoryMySQL(DatabaseConnectionFactory.getConnectionWrapper(true).getConnection());
-        book1 = new BookBuilder()
+        book1 = new BookBuilder<>(Book.class)
                 .setId(1L)
                 .setTitle("Harry Potter")
                 .setAuthor("J.K. Rowling")
                 .setPublishedDate(LocalDate.of(2010, 7, 3))
                 .build();
-        book2 = new BookBuilder()
+        book2 = new BookBuilder<>(Book.class)
                 .setId(2L)
                 .setTitle("some book")
                 .setAuthor("some author")

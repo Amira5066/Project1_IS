@@ -5,17 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40019402-837e-4fd1-a222-46a158382d39" name="Changes" comment="use TRUNCATE in removeAll">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/AudioBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepositoryCacheDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepositoryDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepositoryMock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/Cache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/service/BookServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMockTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/REAME.MD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/EBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/builder/AudioBookBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/builder/EBookBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BookRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMySQLTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/database/JDBConnectionWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/database/JDBConnectionWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/model/AudioBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/model/AudioBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/model/builder/BookBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/model/builder/BookBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepositoryMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMockTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMySQLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMySQLTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +91,7 @@
       <workItem from="1699429858762" duration="2399000" />
       <workItem from="1699545949703" duration="336000" />
       <workItem from="1699546298145" duration="3238000" />
-      <workItem from="1699785662801" duration="3198000" />
+      <workItem from="1699785662801" duration="12559000" />
     </task>
     <task id="LOCAL-00001" summary="BookRepositoryMySQL done. In unit testing find by id needs to be fixed">
       <created>1699431561031</created>

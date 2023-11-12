@@ -33,7 +33,7 @@ public class BookRepositoryMockTest {
 
     @Test
     public void save(){
-        Book book = new BookBuilder()
+        Book book = new BookBuilder<>(Book.class)
                 .setAuthor("Author")
                 .setTitle("Title")
                 .build();

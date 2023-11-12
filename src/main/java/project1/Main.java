@@ -21,20 +21,36 @@ public class Main {
         BookService bookService = new BookServiceImpl(bookRepository);
 
 
-        Book book = new BookBuilder()
+        // order of the setters matters!!!!
+        Book book = new AudioBookBuilder(AudioBook.class)
+                .setRunTime(13)
                 .setTitle("Harry Potter")
                 .setAuthor("J.K. Rowling")
                 .setPublishedDate(LocalDate.of(2010, 7, 3))
                 .build();
 
-
         System.out.println(book);
 
+        book = new BookBuilder(Book.class)
+                .setTitle("Harry Potter")
+                .setAuthor("J.K. Rowling")
+                .setPublishedDate(LocalDate.of(2010, 7, 3))
+                .build();
+
+        System.out.println(book);
         bookService.save(book);
 
         System.out.println(bookService.findAll());
 
         System.out.println(bookService.findAll());
         System.out.println(bookService.findAll());
+
+        book = new EBookBuilder(EBook.class)
+                .setFormat("pdf")
+                .setTitle("Harry Potter")
+                .setAuthor("J.K. Rowling")
+                .setPublishedDate(LocalDate.of(2010, 7, 3))
+                .build();
+        System.out.println(book);
     }
 }
