@@ -32,6 +32,7 @@ public class BookRepositoryMySQLTest {
                 .setAuthor("some author")
                 .setPublishedDate(LocalDate.of(2015, 3, 7))
                 .build();
+        bookRepository.removeAll();
     }
     @org.junit.jupiter.api.Test
     void save() {

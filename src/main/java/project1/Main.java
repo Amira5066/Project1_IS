@@ -28,22 +28,15 @@ public class Main {
                 .setAuthor("J.K. Rowling")
                 .setPublishedDate(LocalDate.of(2010, 7, 3))
                 .build();
-
-        System.out.println(book);
+        bookService.save(book);
 
         book = new BookBuilder(Book.class)
                 .setTitle("Harry Potter")
                 .setAuthor("J.K. Rowling")
                 .setPublishedDate(LocalDate.of(2010, 7, 3))
                 .build();
-
-        System.out.println(book);
         bookService.save(book);
 
-        System.out.println(bookService.findAll());
-
-        System.out.println(bookService.findAll());
-        System.out.println(bookService.findAll());
 
         book = new EBookBuilder(EBook.class)
                 .setFormat("pdf")
@@ -51,6 +44,12 @@ public class Main {
                 .setAuthor("J.K. Rowling")
                 .setPublishedDate(LocalDate.of(2010, 7, 3))
                 .build();
-        System.out.println(book);
+
+        bookService.save(book);
+
+        System.out.println(bookService.findAll());
+        System.out.println(bookService.findById(300L));
+        System.out.println(bookService.getAgeOfBook(3L));
+
     }
 }
