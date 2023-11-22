@@ -1,55 +1,52 @@
 package project1;
 
-import project1.model.*;
-import project1.model.builder.*;
-import project1.repository.*;
-import project1.database.*;
-import project1.service.*;
+import java.time.LocalDate;
+import project1.controller.LoginController;
+import project1.database.DatabaseConnectionFactory;
+import project1.database.JDBConnectionWrapper;
+import javafx.application.Application;
+import javafx.stage.Stage;
+import project1.model.Book;
+import project1.model.builder.BookBuilder;
+import project1.model.validator.UserValidator;
+import project1.repository.book.BookRepository;
+import project1.repository.book.BookRepositoryCacheDecorator;
+import project1.repository.book.BookRepositoryMySQL;
+import project1.repository.book.Cache;
+import project1.repository.security.RightsRolesRepository;
+import project1.repository.security.RightsRolesRepositoryMySQL;
+import project1.repository.user.UserRepository;
+import project1.repository.user.UserRepositoryMySQL;
+import project1.service.book.BookService;
+import project1.service.book.BookServiceImpl;
+import project1.service.user.AuthenticationService;
+import project1.service.user.AuthenticationServiceMySQL;
+import project1.view.LoginView;
 
+import java.sql.Connection;
 import java.time.LocalDate;
 
-public class Main {
+import static project1.database.Constants.Schemas.PRODUCTION;
+
+public class Main extends Application {
     public static void main(String[] args){
-        System.out.println("Hello world!");
+        launch(args);
+    }
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        final Connection connection = new JDBConnectionWrapper(PRODUCTION).getConnection();
 
-        BookRepository bookRepository = new BookRepositoryCacheDecorator(
-                new BookRepositoryMySQL(DatabaseConnectionFactory.getConnectionWrapper(true).getConnection()),
-                new Cache<>()
-        );
+        final RightsRolesRepository rightsRolesRepository = new RightsRolesRepositoryMySQL(connection);
+        final UserRepository userRepository = new UserRepositoryMySQL(connection, rightsRolesRepository);
 
-        BookService bookService = new BookServiceImpl(bookRepository);
+        final AuthenticationService authenticationService = new AuthenticationServiceMySQL(userRepository,
+                rightsRolesRepository);
 
+        final LoginView loginView = new LoginView(primaryStage);
 
-        // order of the setters matters!!!!
-        Book book = new AudioBookBuilder(AudioBook.class)
-                .setRunTime(13)
-                .setTitle("Harry Potter")
-                .setAuthor("J.K. Rowling")
-                .setPublishedDate(LocalDate.of(2010, 7, 3))
-                .build();
-        bookService.save(book);
+        final UserValidator userValidator = new UserValidator(userRepository);
 
-        book = new BookBuilder(Book.class)
-                .setTitle("Harry Potter")
-                .setAuthor("J.K. Rowling")
-                .setPublishedDate(LocalDate.of(2010, 7, 3))
-                .build();
-        bookService.save(book);
-
-
-        book = new EBookBuilder(EBook.class)
-                .setFormat("pdf")
-                .setTitle("Harry Potter")
-                .setAuthor("J.K. Rowling")
-                .setPublishedDate(LocalDate.of(2010, 7, 3))
-                .build();
-
-        bookService.save(book);
-
-        System.out.println(bookService.findAll());
-        System.out.println(bookService.findById(300L));
-        System.out.println(bookService.getAgeOfBook(3L));
-
+        new LoginController(loginView, authenticationService, userValidator);
     }
 }

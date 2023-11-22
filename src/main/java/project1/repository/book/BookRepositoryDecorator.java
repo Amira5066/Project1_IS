@@ -1,4 +1,4 @@
-package project1.repository;
+package project1.repository.book;
 
 public abstract class BookRepositoryDecorator implements BookRepository {
     protected BookRepository decoratedRepository;

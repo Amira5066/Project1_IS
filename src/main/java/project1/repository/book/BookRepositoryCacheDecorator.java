@@ -1,4 +1,4 @@
-package project1.repository;
+package project1.repository.book;
 
 import project1.model.Book;
 

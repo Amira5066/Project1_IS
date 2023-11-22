@@ -1,7 +1,7 @@
-package project1.service;
+package project1.service.book;
 
 import project1.model.Book;
-import project1.repository.BookRepository;
+import project1.repository.book.BookRepository;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;

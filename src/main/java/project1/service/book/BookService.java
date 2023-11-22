@@ -1,4 +1,4 @@
-package project1.service;
+package project1.service.book;
 
 import project1.model.Book;
 
