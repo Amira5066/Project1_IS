@@ -1,24 +1,41 @@
 package project1.database;
 
-import static project1.database.Constants.Tables.BOOK;
-import static project1.database.Constants.Tables.RIGHT;
-import static project1.database.Constants.Tables.ROLE;
-import static project1.database.Constants.Tables.ROLE_RIGHT;
-import static project1.database.Constants.Tables.USER;
-import static project1.database.Constants.Tables.USER_ROLE;
+import static project1.database.Constants.Tables.*;
 
 public class SQLTableCreationFactory {
 
     public String getCreateSQLForTable(String table) {
         return switch (table) {
             case BOOK -> "CREATE TABLE IF NOT EXISTS book (" +
-                    "  id int(11) NOT NULL AUTO_INCREMENT," +
+                    "  id bigint NOT NULL AUTO_INCREMENT," +
                     "  author varchar(500) NOT NULL," +
                     "  title varchar(500) NOT NULL," +
                     "  publishedDate datetime DEFAULT NULL," +
+                    "  price INT DEFAULT 0," +
                     "  PRIMARY KEY (id)," +
                     "  UNIQUE KEY id_UNIQUE (id)" +
                     ") ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;";
+            case PHYSICAL_BOOK -> "CREATE TABLE IF NOT EXISTS physical_book(" +
+                    " id bigint NOT NULL," +
+                    " cover varchar(20) NOT NULL," +
+                    " stock INT NOT NULL," +
+                    " PRIMARY KEY(id, cover)," +
+                    " FOREIGN KEY (id) REFERENCES book(id)"+
+                    ") DEFAULT CHARSET=utf8;";
+            case AUDIO_BOOK -> "CREATE TABLE IF NOT EXISTS audio_book(" +
+                    " id bigint NOT NULL AUTO_INCREMENT," +
+                    " runTime bigint NOT NULL," +
+                    " PRIMARY KEY(id, runTime)," +
+                    " FOREIGN KEY (id) REFERENCES book(id), "+
+                    " UNIQUE KEY id_UNIQUE(id)" +
+                    ") DEFAULT CHARSET=utf8;";
+            case EBOOK -> "CREATE TABLE IF NOT EXISTS ebook(" +
+                    " id bigint NOT NULL AUTO_INCREMENT," +
+                    " format varchar(10) NOT NULL," +
+                    " PRIMARY KEY(id, format)," +
+                    " FOREIGN KEY (id) REFERENCES book(id), "+
+                    " UNIQUE KEY id_UNIQUE(id)" +
+                    ") DEFAULT CHARSET=utf8;";
             case USER -> "CREATE TABLE IF NOT EXISTS user (" +
                     "  id INT NOT NULL AUTO_INCREMENT," +
                     "  username VARCHAR(200) NOT NULL," +

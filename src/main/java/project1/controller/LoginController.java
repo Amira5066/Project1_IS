@@ -2,6 +2,7 @@ package project1.controller;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import project1.Main;
 import project1.model.User;
 import project1.model.validator.UserValidator;
 import project1.service.user.AuthenticationService;
@@ -38,7 +39,8 @@ public class LoginController {
             if (user == null){
                 loginView.setActionTargetText("Invalid Username or password!");
             }else{
-                loginView.setActionTargetText("LogIn Successfull!");
+                loginView.setActionTargetText("LogIn Successful!");
+                Main.switchToClientView();
             }
 
         }

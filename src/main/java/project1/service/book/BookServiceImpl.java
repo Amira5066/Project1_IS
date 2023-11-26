@@ -1,6 +1,7 @@
 package project1.service.book;
 
 import project1.model.Book;
+import project1.model.PhysicalBook;
 import project1.repository.book.BookRepository;
 
 import java.time.LocalDate;
@@ -16,13 +17,13 @@ public class BookServiceImpl implements  BookService {
     }
 
     @Override
-    public List<Book> findAll() {
-        return bookRepository.findAll();
+    public List<Book> findAll(String bookType) {
+        return bookRepository.findAll(bookType);
     }
 
     @Override
-    public Book findById(Long id) {
-        return bookRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Book with id: %d not found".formatted(id)));
+    public Book findById(Long id, String bookType) {
+        return bookRepository.findById(id, bookType).orElseThrow(() -> new IllegalArgumentException("Book with id: %d not found".formatted(id)));
     }
 
     @Override
@@ -32,10 +33,15 @@ public class BookServiceImpl implements  BookService {
 
     @Override
     public int getAgeOfBook(Long id) {
-        Book book = this.findById(id);
+        Book book = this.findById(id, null);
 
         LocalDate now = LocalDate.now();
 
         return (int) ChronoUnit.YEARS.between(book.getPublishedDate(), now);
+    }
+
+    @Override
+    public boolean updateStock(PhysicalBook book) {
+        return bookRepository.updateStock(book);
     }
 }

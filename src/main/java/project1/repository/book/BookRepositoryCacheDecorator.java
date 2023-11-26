@@ -14,19 +14,19 @@ public class BookRepositoryCacheDecorator extends BookRepositoryDecorator {
     }
 
     @Override
-    public List<Book> findAll() {
+    public List<Book> findAll(String bookType) {
         if (cache.hasResult()) {
             return cache.load();
         }
 
-        List<Book> books = decoratedRepository.findAll();
+        List<Book> books = decoratedRepository.findAll(bookType);
         cache.save(books);
 
         return books;
     }
 
     @Override
-    public Optional<Book> findById(Long id) {
+    public Optional<Book> findById(Long id, String bookType) {
 
         if (cache.hasResult()) {
             return cache.load()
@@ -35,7 +35,7 @@ public class BookRepositoryCacheDecorator extends BookRepositoryDecorator {
                     .findFirst();
         }
 
-        return decoratedRepository.findById(id);
+        return decoratedRepository.findById(id, bookType);
     }
 
     @Override

@@ -35,6 +35,11 @@ public class BookBuilder<T extends Book> {
         book.setPublishedDate(publishedDate);
         return this;
     }
+
+    public BookBuilder<T> setPrice(int price) {
+        book.setPrice(price);
+        return this;
+    }
     public T build() {
         return book;
     }

@@ -42,6 +42,10 @@ public class Constants {
 
     public static class Tables {
         public static final String BOOK = "book";
+        public static final String AUDIO_BOOK = "audio_book";
+        public static final String EBOOK = "ebook";
+        public static final String PHYSICAL_BOOK = "physical_book";
+
         public static final String USER = "user";
         public static final String ROLE = "role";
         public static final String RIGHT = "right";
@@ -49,7 +53,7 @@ public class Constants {
         public static final String USER_ROLE = "user_role";
 
         public static final String[] ORDERED_TABLES_FOR_CREATION = new String[]{USER, ROLE, RIGHT, ROLE_RIGHT, USER_ROLE,
-                BOOK};
+                BOOK, PHYSICAL_BOOK, AUDIO_BOOK, EBOOK};
     }
 
     public static class Roles {

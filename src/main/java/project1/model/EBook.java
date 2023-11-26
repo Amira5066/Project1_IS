@@ -3,7 +3,8 @@ package project1.model;
 import project1.model.Book;
 
 public class EBook extends Book {
-    String format;
+    private String format;
+
 
     public String getFormat() {
         return format;

@@ -23,22 +23,22 @@ public class LoginView {
     private PasswordField passwordField;
     private Button signInButton;
     private Button logInButton;
-    private Text actiontarget;
+    private Text actionTarget;
 
-    public LoginView(Stage primaryStage) {
-        primaryStage.setTitle("Book Store");
+    public LoginView(Stage window) {
+        window.setTitle("Book Store");
 
         GridPane gridPane = new GridPane();
         initializeGridPane(gridPane);
 
         Scene scene = new Scene(gridPane, 720, 480);
-        primaryStage.setScene(scene);
+        window.setScene(scene);
 
         initializeSceneTitle(gridPane);
 
         initializeFields(gridPane);
 
-        primaryStage.show();
+        window.show();
     }
 
     private void initializeGridPane(GridPane gridPane){
@@ -79,9 +79,9 @@ public class LoginView {
         logInButtonHBox.getChildren().add(logInButton);
         gridPane.add(logInButtonHBox, 0, 4);
 
-        actiontarget = new Text();
-        actiontarget.setFill(Color.FIREBRICK);
-        gridPane.add(actiontarget, 1, 6);
+        actionTarget = new Text();
+        actionTarget.setFill(Color.FIREBRICK);
+        gridPane.add(actionTarget, 1, 6);
     }
 
     public String getUsername() {
@@ -92,7 +92,7 @@ public class LoginView {
         return passwordField.getText();
     }
 
-    public void setActionTargetText(String text){ this.actiontarget.setText(text);}
+    public void setActionTargetText(String text){ this.actionTarget.setText(text);}
 
     public void addLoginButtonListener(EventHandler<ActionEvent> loginButtonListener) {
         logInButton.setOnAction(loginButtonListener);

@@ -7,6 +7,15 @@ public class Book {
     private String author;
     private String title;
     private LocalDate publishedDate;
+    private int price;
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public float getPrice() {
+        return price;
+    }
 
     public Long getId() {
         return id;

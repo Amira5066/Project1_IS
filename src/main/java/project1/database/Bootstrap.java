@@ -27,6 +27,8 @@ public class Bootstrap {
         bootstrapTables();
 
         bootstrapUserData();
+
+        bootstrapBookData();
     }
 
     private static void dropAll() throws SQLException {
@@ -37,10 +39,12 @@ public class Bootstrap {
             Statement statement = connection.createStatement();
 
             String[] dropStatements = {
-//                    "TRUNCATE audio_book",
-//                    "DROP TABLE audio_book",
-//                    "TRUNCATE ebook",
-//                    "DROP TABLE ebook",
+                    "TRUNCATE `physical_book`",
+                    "DROP TABLE `physical_book`",
+                    "TRUNCATE `audio_book`",
+                    "DROP TABLE `audio_book`",
+                    "TRUNCATE `ebook`",
+                    "DROP TABLE `ebook`",
                     "TRUNCATE `role_right`;",
                     "DROP TABLE `role_right`;",
                     "TRUNCATE `right`;",
@@ -126,5 +130,40 @@ public class Bootstrap {
 
     private static void bootstrapUserRoles() throws SQLException {
 
+    }
+
+    private static void bootstrapBookData() throws SQLException {
+        for (String schema : SCHEMAS) {
+            System.out.println("Inserting books in schema: " + schema);
+
+            Connection connection = new JDBConnectionWrapper(schema).getConnection();
+            Statement statement = connection.createStatement();
+
+            String[] dataStatements = {
+                    "INSERT INTO `book`(`author`, `title`, `publishedDate`, `price`) VALUES ('J.K. Rowling','Harry Potter','1997-06-26', 32);",
+                    "INSERT INTO `book`(`author`, `title`, `publishedDate`, `price`) VALUES ('Jojo Moyes','Me Before You','2012-01-05', 39);",
+                    "INSERT INTO `book`(`author`, `title`, `publishedDate`, `price`) VALUES ('James Dashner','The Maze Runner','2009-10-06', 41);",
+                    "INSERT INTO `book`(`author`, `title`, `publishedDate`, `price`) VALUES ('Rick Yancey','The 5th wave','2013-05-07', 48);",
+
+                    "INSERT INTO `physical_book`(`id`, `cover`, `stock`) VALUES (1, 'hardcover', 30);",
+                    "INSERT INTO `physical_book`(`id`, `cover`, `stock`) VALUES (1, 'paperback', 20);",
+                    "INSERT INTO `physical_book`(`id`, `cover`, `stock`) VALUES (2, 'paperback', 40);",
+                    "INSERT INTO `physical_book`(`id`, `cover`, `stock`) VALUES (3, 'hardcover', 52);",
+                    "INSERT INTO `physical_book`(`id`, `cover`, `stock`) VALUES (4, 'paperback', 67);",
+
+                    "INSERT INTO `audio_book`(`id`, `runTime`) VALUES (1, 200);",
+                    "INSERT INTO `audio_book`(`id`, `runTime`) VALUES (2, 300);",
+
+                    "INSERT INTO `ebook`(`id`, `format`) VALUES (3, 'pdf');",
+                    "INSERT INTO `ebook`(`id`, `format`) VALUES (4, 'pdf');",
+            };
+            Arrays.stream(dataStatements).forEach(dropStatement -> {
+                try {
+                    statement.execute(dropStatement);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
     }
 }

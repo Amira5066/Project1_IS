@@ -5,37 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40019402-837e-4fd1-a222-46a158382d39" name="Changes" comment="changed directory">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/database/Bootstrap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/database/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/database/SQLTableCreationFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/Right.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/builder/UserBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/validator/UserValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/security/RightsRolesRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/security/RightsRolesRepositoryMySQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/user/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/user/UserRepositoryMySQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/service/user/AuthenticationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/service/user/AuthenticationServiceMySQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/view/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/controller/ClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/PhysicalBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/builder/PhysicalBookBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/view/ClientView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/database/Bootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/database/Bootstrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/database/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/database/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/database/JDBConnectionWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/database/JDBConnectionWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/database/SQLTableCreationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/database/SQLTableCreationFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepositoryCacheDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryCacheDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepositoryDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepositoryMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/BookRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/Cache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/service/book/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/service/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/service/book/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMockTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMySQLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMySQLTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/model/EBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/model/EBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/model/builder/BookBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/model/builder/BookBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryCacheDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryCacheDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/service/book/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/service/book/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/service/book/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/service/book/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/view/LoginView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +165,12 @@
       <workItem from="1699977003368" duration="65000" />
       <workItem from="1700150669298" duration="4079000" />
       <workItem from="1700636505579" duration="2892000" />
+      <workItem from="1700639675930" duration="120000" />
+      <workItem from="1700679580406" duration="1079000" />
+      <workItem from="1700755311111" duration="1645000" />
+      <workItem from="1700904368651" duration="22562000" />
+      <workItem from="1700935710409" duration="3068000" />
+      <workItem from="1700982729297" duration="5815000" />
     </task>
     <task id="LOCAL-00001" summary="BookRepositoryMySQL done. In unit testing find by id needs to be fixed">
       <created>1699431561031</created>
