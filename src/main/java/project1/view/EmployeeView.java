@@ -12,8 +12,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import project1.model.AudioBook;
@@ -22,11 +20,12 @@ import project1.model.EBook;
 import project1.model.PhysicalBook;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import static project1.database.Constants.Tables.*;
 
-public class ClientView {
+public class EmployeeView {
     private TableView table;
     private TableColumn idCol;
     private TableColumn titleCol;
@@ -38,18 +37,35 @@ public class ClientView {
     private TableColumn stockCol;
     private TableColumn priceCol;
     private HBox hb;
+    private HBox hbText;
+    private HBox hbReport;
     private Button viewBooksButton;
     private Button viewAudioBooksButton;
     private Button viewEBooksButton;
     private Button viewPhysicalBooksButton;
-    private Button buyBookButton;
+    private Button sellBookButton;
+    private Button addBookButton;
+    private Button deleteBookButton;
+    private Button editBookButton;
+    private Button createReportButton;
     private Text actionTarget;
 
     private ObservableList<Book> books;
     private String bookType;
 
+    private final TextField addId = new TextField();
+    private final TextField addTitle = new TextField();
+    private final TextField addPublishedDate = new TextField();
+    private final TextField addAuthor = new TextField();
+    private final TextField addPrice = new TextField();
+    private final TextField addCover = new TextField();
+    private final TextField addStock = new TextField();
+    private final TextField addFormat = new TextField();
+    private final TextField addRuntime = new TextField();
+    private List<TextField> textFields = new ArrayList<>();
+    private List<TableColumn> tableColumns = new ArrayList<>();
 
-    public ClientView(Stage window) {
+    public EmployeeView(Stage window) {
         window.setTitle("Book Store");
         window.setWidth(900);
         window.setHeight(600);
@@ -58,8 +74,6 @@ public class ClientView {
         initializeVBox(vbox);
 
         Scene scene = new Scene(new Group());
-
-        initializeSceneTitle(vbox);
 
         initializeFields(vbox);
 
@@ -74,18 +88,9 @@ public class ClientView {
         vbox.setPadding(new Insets(10, 0, 0, 10));
     }
 
-    private void initializeSceneTitle(VBox vbox){
-        Text sceneTitle = new Text("Hello Customer!");
-        sceneTitle.setFont(Font.font("Tahome", FontWeight.NORMAL, 20));
-        vbox.getChildren().add(sceneTitle);
-    }
-
-    private void initializeFields(VBox vbox){
-        bookType = BOOK;
-        hb = new HBox();
-
+    private void setTable(){
         table = new TableView<>();
-        table.setEditable(false);
+        table.setEditable(true);
 
         idCol = new TableColumn("Id");
         idCol.setMaxWidth(40);
@@ -123,20 +128,108 @@ public class ClientView {
         priceCol.setMaxWidth(60);
         priceCol.setCellValueFactory(new PropertyValueFactory<Book, Integer>("price"));
 
+        tableColumns.add(idCol);
+        tableColumns.add(titleCol);
+        tableColumns.add(authorCol);
+        tableColumns.add(publishedDateCol);
+        tableColumns.add(priceCol);
+        tableColumns.add(coverCol);
+        tableColumns.add(stockCol);
+        tableColumns.add(formatCol);
+        tableColumns.add(runtimeCol);
+    }
+
+    private void setButtons() {
         viewBooksButton = new Button("View books");
         viewAudioBooksButton = new Button("View audio books");
         viewEBooksButton = new Button("View ebooks");
         viewPhysicalBooksButton = new Button("View physical books");
-        buyBookButton = new Button("Buy Book");
+        sellBookButton = new Button("Sell Book");
+        createReportButton = new Button("Create report");
+        deleteBookButton = new Button("Delete book");
+        addBookButton = new Button("Add");
+        editBookButton = new Button("Edit");
+    }
+
+    private void setTextFields(){
+        addId.setPromptText("Id");
+        addId.setMaxWidth(idCol.getPrefWidth());
+
+        addTitle.setPromptText("Title");
+        addTitle.setMaxWidth(titleCol.getPrefWidth());
+
+        addPublishedDate.setPromptText("Published Date");
+        addPublishedDate.setMinWidth(publishedDateCol.getPrefWidth());
+
+        addAuthor.setPromptText("Author");
+        addAuthor.setMaxWidth(authorCol.getPrefWidth());
+
+        addPrice.setPromptText("Price");
+        addPrice.setMaxWidth(priceCol.getPrefWidth());
+
+        addCover.setPromptText("Cover");
+        addCover.setMaxWidth(coverCol.getPrefWidth());
+
+        addStock.setPromptText("Stock");
+        addStock.setMaxWidth(stockCol.getPrefWidth());
+
+        addRuntime.setPromptText("Runtime");
+        addRuntime.setMaxWidth(runtimeCol.getPrefWidth());
+
+        addFormat.setPromptText("Format");
+        addFormat.setMaxWidth(formatCol.getPrefWidth());
+
+        addCover.setVisible(false);
+        addStock.setVisible(false);
+        addFormat.setVisible(false);
+        addRuntime.setVisible(false);
+
+        addCover.setManaged(false);
+        addStock.setManaged(false);
+        addFormat.setManaged(false);
+        addRuntime.setManaged(false);
+
+        textFields.add(addId);
+        textFields.add(addTitle);
+        textFields.add(addAuthor);
+        textFields.add(addPublishedDate);
+        textFields.add(addPrice);
+        textFields.add(addCover);
+        textFields.add(addStock);
+        textFields.add(addFormat);
+        textFields.add(addRuntime);
+    }
+
+    private void initializeFields(VBox vbox){
+        bookType = BOOK;
+        hb = new HBox();
+        hbText = new HBox();
+        hbReport = new HBox();
+
+        setTable();
+        setButtons();
+        setTextFields();
+
+        titleCol.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Book, String>>() {
+            @Override
+            public void handle(TableColumn.CellEditEvent<Book, String> t) {
+                Book book = ((Book) t.getTableView().getItems().get(t.getTablePosition().getRow()));
+                System.out.println(book);
+                System.out.println(t.getNewValue());
+            }
+        });
 
         actionTarget = new Text();
         actionTarget.setFill(Color.FIREBRICK);
 
-        hb.getChildren().addAll(viewBooksButton, viewPhysicalBooksButton, viewAudioBooksButton, viewEBooksButton, buyBookButton, actionTarget);
+        hb.getChildren().addAll(viewBooksButton, viewPhysicalBooksButton, viewAudioBooksButton, viewEBooksButton, sellBookButton, actionTarget, deleteBookButton);
         hb.setSpacing(3);
 
+        hbText.getChildren().addAll(addId, addTitle, addAuthor, addPublishedDate, addPrice, addCover, addStock, addFormat, addRuntime, addBookButton, editBookButton);
+        hbReport.getChildren().addAll(createReportButton);
+
         table.getColumns().addAll(idCol, titleCol, authorCol, publishedDateCol);
-        vbox.getChildren().addAll(table, hb);
+        vbox.getChildren().addAll(table, hb, hbText, hbReport);
     }
 
     public void setBooks(List<Book> books, String bookType) {
@@ -153,6 +246,7 @@ public class ClientView {
                 break;
         }
         table.setItems(this.books);
+
         table.refresh();
     }
 
@@ -176,12 +270,48 @@ public class ClientView {
         return (Book) table.getSelectionModel().getSelectedItem();
     }
 
-    public void addBuyBooksButtonListener(EventHandler<ActionEvent> buyBookButtonListener) {
-        buyBookButton.setOnAction(buyBookButtonListener);
+    public void addSellBooksButtonListener(EventHandler<ActionEvent> sellBookButtonListener) {
+        sellBookButton.setOnAction(sellBookButtonListener);
+    }
+
+    public void addCreateReportButtonListener(EventHandler<ActionEvent> createReportButtonListener) {
+        createReportButton.setOnAction(createReportButtonListener);
+    }
+
+    public void addDeleteBooksButtonListener(EventHandler<ActionEvent> deleteBookButtonListener) {
+        deleteBookButton.setOnAction(deleteBookButtonListener);
+    }
+    public void addAddBooksButtonListener(EventHandler<ActionEvent> addBookButtonListener) {
+        addBookButton.setOnAction(addBookButtonListener);
+    }
+
+    public void addEditBooksButtonListener(EventHandler<ActionEvent> editBookButtonListener) {
+        editBookButton.setOnAction(editBookButtonListener);
+    }
+
+    public List<TableColumn> getTableColumns() {
+        return tableColumns;
     }
 
     public void setActionTargetText(String text, Color color){
         this.actionTarget.setText(text);
         this.actionTarget.setFill(color);
+    }
+
+    public void clearTextFields() {
+        addFormat.clear();
+        addId.clear();
+        addTitle.clear();
+        addAuthor.clear();
+        addPublishedDate.clear();
+        addStock.clear();
+        addPrice.clear();
+        addFormat.clear();
+        addRuntime.clear();
+        addCover.clear();
+    }
+
+    public List<TextField> getTextFields() {
+        return textFields;
     }
 }

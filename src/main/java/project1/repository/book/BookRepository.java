@@ -12,4 +12,6 @@ public interface BookRepository {
     boolean save(Book book);
     void removeAll();
     boolean updateStock(PhysicalBook book);
+    boolean update(Book newBook, Book oldBook);
+    boolean delete(Book book, String table);
 }

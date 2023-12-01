@@ -13,7 +13,7 @@ public class Book {
         this.price = price;
     }
 
-    public float getPrice() {
+    public int getPrice() {
         return price;
     }
 

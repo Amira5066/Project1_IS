@@ -52,6 +52,8 @@ public class Bootstrap {
                     "TRUNCATE `user_role`;",
                     "DROP TABLE `user_role`;",
                     "TRUNCATE `role`;",
+                    "TRUNCATE `employee_report`;",
+                    "DROP TABLE `employee_report`;",
                     "DROP TABLE  `book`, `role`, `user`;"
             };
 
@@ -156,6 +158,7 @@ public class Bootstrap {
 
                     "INSERT INTO `ebook`(`id`, `format`) VALUES (3, 'pdf');",
                     "INSERT INTO `ebook`(`id`, `format`) VALUES (4, 'pdf');",
+
             };
             Arrays.stream(dataStatements).forEach(dropStatement -> {
                 try {

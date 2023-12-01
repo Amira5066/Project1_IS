@@ -1,5 +1,6 @@
 package project1.repository.book;
 
+import project1.model.Book;
 import project1.model.PhysicalBook;
 
 public abstract class BookRepositoryDecorator implements BookRepository {
@@ -11,6 +12,11 @@ public abstract class BookRepositoryDecorator implements BookRepository {
 
     @Override
     public boolean updateStock(PhysicalBook book) {
+        return false;
+    }
+
+    @Override
+    public boolean update(Book newBook, Book oldBook) {
         return false;
     }
 }

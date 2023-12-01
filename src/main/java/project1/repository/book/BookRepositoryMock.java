@@ -27,6 +27,11 @@ public class BookRepositoryMock implements BookRepository {
     }
 
     @Override
+    public boolean delete(Book book, String table) {
+        return false;
+    }
+
+    @Override
     public boolean save(Book book) {
         return books.add(book);
     }
@@ -38,6 +43,11 @@ public class BookRepositoryMock implements BookRepository {
 
     @Override
     public boolean updateStock(PhysicalBook book) {
+        return false;
+    }
+
+    @Override
+    public boolean update(Book newBook, Book oldBook) {
         return false;
     }
 }

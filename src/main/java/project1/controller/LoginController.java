@@ -8,14 +8,17 @@ import project1.model.validator.UserValidator;
 import project1.service.user.AuthenticationService;
 import project1.view.LoginView;
 
-import java.util.EventListener;
 import java.util.List;
+
+import static project1.database.Constants.Roles.CUSTOMER;
+import static project1.database.Constants.Roles.EMPLOYEE;
 
 public class LoginController {
 
     private final LoginView loginView;
     private final AuthenticationService authenticationService;
     private final UserValidator userValidator;
+    private static Long id;
 
 
     public LoginController(LoginView loginView, AuthenticationService authenticationService, UserValidator userValidator) {
@@ -39,11 +42,23 @@ public class LoginController {
             if (user == null){
                 loginView.setActionTargetText("Invalid Username or password!");
             }else{
+                id = user.getId();
                 loginView.setActionTargetText("LogIn Successful!");
-                Main.switchToClientView();
+                switch (user.getRoles().get(0).getRole()) {
+                    case CUSTOMER:
+                        Main.switchToCustomerView();
+                        break;
+                    case EMPLOYEE:
+                        Main.switchToEmployeeView();
+                        break;
+                }
             }
 
         }
+    }
+
+    public static Long getId() {
+        return id;
     }
 
     private class RegisterButtonListener implements EventHandler<ActionEvent> {

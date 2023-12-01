@@ -1,6 +1,9 @@
 package project1.repository.user;
 
+import project1.model.Book;
+import project1.model.EmployeeReport;
 import  project1.model.User;
+import project1.model.builder.EmployeeReportBuilder;
 import  project1.model.builder.UserBuilder;
 import  project1.repository.security.RightsRolesRepository;
 
@@ -11,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+import static project1.database.Constants.Tables.EMPLOYEE_REPORT;
 import static  project1.database.Constants.Tables.USER;
 import static java.util.Collections.singletonList;
 
@@ -41,6 +45,7 @@ public class UserRepositoryMySQL implements UserRepository {
             userResultSet.next();
 
             User user = new UserBuilder()
+                    .setId(userResultSet.getLong("id"))
                     .setUsername(userResultSet.getString("username"))
                     .setPassword(userResultSet.getString("password"))
                     .setRoles(rightsRolesRepository.findRolesForUser(userResultSet.getLong("id")))
@@ -104,4 +109,40 @@ public class UserRepositoryMySQL implements UserRepository {
         }
     }
 
+    @Override
+    public boolean updateSales(Long id, int price) {
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("UPDATE employee_report SET books_sold = books_sold + 1, income = income + ?  WHERE user_id = ?", Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setInt(1, price);
+            preparedStatement.setLong(2, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public EmployeeReport findReportById(Long id) {
+        try {
+            Statement statement = connection.createStatement();
+            String fetchEmployeeSql =
+                    "SELECT username, books_sold, income FROM " + EMPLOYEE_REPORT + " JOIN " + USER + " ON user_id = id WHERE id = " + id + ";";
+            ResultSet userResultSet = statement.executeQuery(fetchEmployeeSql);
+            userResultSet.next();
+
+            EmployeeReport report = new EmployeeReportBuilder()
+                    .setUsername(userResultSet.getString("username"))
+                    .setBooksSold(userResultSet.getInt("books_sold"))
+                    .setIncome(userResultSet.getInt("income"))
+                    .build();
+
+            return report;
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+        }
+        return null;
+    }
 }

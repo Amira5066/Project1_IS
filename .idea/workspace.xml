@@ -4,29 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40019402-837e-4fd1-a222-46a158382d39" name="Changes" comment="changed directory">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/controller/ClientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/PhysicalBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/builder/PhysicalBookBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/view/ClientView.java" afterDir="false" />
+    <list default="true" id="40019402-837e-4fd1-a222-46a158382d39" name="Changes" comment="added view books and buy books for customer">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/controller/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/EmployeeReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/model/builder/EmployeeReportBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/service/user/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/service/user/EmployeeServiceMySQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project1/view/EmployeeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34a1a094-2bad-4162-a865-015d32479acd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34a1a094-2bad-4162-a865-015d32479acd/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34a1a094-2bad-4162-a865-015d32479acd/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34a1a094-2bad-4162-a865-015d32479acd/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/database/Bootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/database/Bootstrap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/database/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/database/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/database/JDBConnectionWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/database/JDBConnectionWrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/database/SQLTableCreationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/database/SQLTableCreationFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/model/EBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/model/EBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/model/builder/BookBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/model/builder/BookBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryCacheDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryCacheDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/user/UserRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/user/UserRepositoryMySQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/service/book/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/service/book/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project1/service/book/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/service/book/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/view/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/service/user/AuthenticationServiceMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/service/user/AuthenticationServiceMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/view/ClientView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/view/CustomerView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,30 +99,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/faculta/an 3/sem 1/IS/project1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "last_opened_file_path": "E:/faculta/an 3/sem 1/IS/project1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="project1 [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -170,7 +181,11 @@
       <workItem from="1700755311111" duration="1645000" />
       <workItem from="1700904368651" duration="22562000" />
       <workItem from="1700935710409" duration="3068000" />
-      <workItem from="1700982729297" duration="5815000" />
+      <workItem from="1700982729297" duration="6104000" />
+      <workItem from="1701078848750" duration="147000" />
+      <workItem from="1701333206914" duration="479000" />
+      <workItem from="1701334177536" duration="20165000" />
+      <workItem from="1701415965392" duration="17868000" />
     </task>
     <task id="LOCAL-00001" summary="BookRepositoryMySQL done. In unit testing find by id needs to be fixed">
       <created>1699431561031</created>
@@ -221,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699977040450</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added view books and buy books for customer">
+      <created>1700989145687</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700989145688</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +257,17 @@
     <MESSAGE value="solution 1: AudioBook and Ebook extending class Book" />
     <MESSAGE value="repository logic" />
     <MESSAGE value="changed directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed directory" />
+    <MESSAGE value="added view books and buy books for customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="added view books and buy books for customer" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLSyntaxErrorException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

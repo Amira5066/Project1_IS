@@ -32,16 +32,17 @@ public class BookServiceImpl implements  BookService {
     }
 
     @Override
-    public int getAgeOfBook(Long id) {
-        Book book = this.findById(id, null);
-
-        LocalDate now = LocalDate.now();
-
-        return (int) ChronoUnit.YEARS.between(book.getPublishedDate(), now);
+    public boolean delete(Book book, String table) {
+        return bookRepository.delete(book, table);
     }
 
     @Override
     public boolean updateStock(PhysicalBook book) {
         return bookRepository.updateStock(book);
+    }
+
+    @Override
+    public boolean update(Book newBook, Book oldBook) {
+        return bookRepository.update(newBook, oldBook);
     }
 }

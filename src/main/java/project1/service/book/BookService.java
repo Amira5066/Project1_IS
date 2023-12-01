@@ -1,5 +1,6 @@
 package project1.service.book;
 
+import com.google.protobuf.BoolValueOrBuilder;
 import project1.model.Book;
 import project1.model.PhysicalBook;
 
@@ -10,5 +11,6 @@ public interface BookService {
     Book findById(Long id, String bookType);
     boolean save(Book book);
     boolean updateStock(PhysicalBook book);
-    int getAgeOfBook(Long id);
+    boolean update(Book newBook, Book oldBook);
+    boolean delete(Book book, String table);
 }

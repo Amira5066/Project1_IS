@@ -14,6 +14,11 @@ public class BookRepositoryCacheDecorator extends BookRepositoryDecorator {
     }
 
     @Override
+    public boolean update(Book newBook, Book oldBook) {
+        return false;
+    }
+
+    @Override
     public List<Book> findAll(String bookType) {
         if (cache.hasResult()) {
             return cache.load();
@@ -42,6 +47,11 @@ public class BookRepositoryCacheDecorator extends BookRepositoryDecorator {
     public boolean save(Book book) {
         cache.invalidateCache();
         return decoratedRepository.save(book);
+    }
+
+    @Override
+    public boolean delete(Book book, String table) {
+        return false;
     }
 
     @Override

@@ -20,20 +20,20 @@ public class SQLTableCreationFactory {
                     " cover varchar(20) NOT NULL," +
                     " stock INT NOT NULL," +
                     " PRIMARY KEY(id, cover)," +
-                    " FOREIGN KEY (id) REFERENCES book(id)"+
+                    " FOREIGN KEY (id) REFERENCES book(id) ON DELETE CASCADE"+
                     ") DEFAULT CHARSET=utf8;";
             case AUDIO_BOOK -> "CREATE TABLE IF NOT EXISTS audio_book(" +
                     " id bigint NOT NULL AUTO_INCREMENT," +
                     " runTime bigint NOT NULL," +
                     " PRIMARY KEY(id, runTime)," +
-                    " FOREIGN KEY (id) REFERENCES book(id), "+
+                    " FOREIGN KEY (id) REFERENCES book(id) ON DELETE CASCADE, "+
                     " UNIQUE KEY id_UNIQUE(id)" +
                     ") DEFAULT CHARSET=utf8;";
             case EBOOK -> "CREATE TABLE IF NOT EXISTS ebook(" +
                     " id bigint NOT NULL AUTO_INCREMENT," +
                     " format varchar(10) NOT NULL," +
                     " PRIMARY KEY(id, format)," +
-                    " FOREIGN KEY (id) REFERENCES book(id), "+
+                    " FOREIGN KEY (id) REFERENCES book(id) ON DELETE CASCADE, "+
                     " UNIQUE KEY id_UNIQUE(id)" +
                     ") DEFAULT CHARSET=utf8;";
             case USER -> "CREATE TABLE IF NOT EXISTS user (" +
@@ -73,7 +73,7 @@ public class SQLTableCreationFactory {
                     "    REFERENCES `right` (id)" +
                     "    ON DELETE CASCADE" +
                     "    ON UPDATE CASCADE);";
-            case USER_ROLE -> "\tCREATE TABLE IF NOT EXISTS user_role (" +
+            case USER_ROLE -> "CREATE TABLE IF NOT EXISTS user_role (" +
                     "  id INT NOT NULL AUTO_INCREMENT," +
                     "  user_id INT NOT NULL," +
                     "  role_id INT NOT NULL," +
@@ -89,6 +89,16 @@ public class SQLTableCreationFactory {
                     "  CONSTRAINT role_fkid" +
                     "    FOREIGN KEY (role_id)" +
                     "    REFERENCES role (id)" +
+                    "    ON DELETE CASCADE" +
+                    "    ON UPDATE CASCADE);";
+            case EMPLOYEE_REPORT -> "CREATE TABLE IF NOT EXISTS employee_report (" +
+                    "  user_id INT NOT NULL," +
+                    "  books_sold INT NOT NULL DEFAULT 0," +
+                    "  income INT NOT NULL DEFAULT 0," +
+                    "  PRIMARY KEY (user_id, books_sold)," +
+                    "  CONSTRAINT user_report_fkid" +
+                    "    FOREIGN KEY (user_id)" +
+                    "    REFERENCES user (id)" +
                     "    ON DELETE CASCADE" +
                     "    ON UPDATE CASCADE);";
             default -> "";

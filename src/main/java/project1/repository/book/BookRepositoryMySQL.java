@@ -240,12 +240,13 @@ public class BookRepositoryMySQL implements BookRepository {
 
     @Override
     public boolean save(Book book) {
-        String sql = "INSERT INTO book (author, title, publishedDate) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO book (author, title, publishedDate, price) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, book.getAuthor());
             preparedStatement.setString(2, book.getTitle());
             preparedStatement.setDate(3, Date.valueOf(book.getPublishedDate()));
+            preparedStatement.setInt(4, book.getPrice());
 
             preparedStatement.executeUpdate();
             if (book instanceof AudioBook) {
@@ -261,11 +262,81 @@ public class BookRepositoryMySQL implements BookRepository {
                 preparedStatement.executeUpdate();
             }
             else if (book instanceof PhysicalBook) {
-                sql = "INSERT INTO physical_book (id, cover) VALUES (LAST_INSERT_ID(), ?)";
+                sql = "INSERT INTO physical_book (id, cover, stock) VALUES (LAST_INSERT_ID(), ?, ?)";
                 preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1, ((PhysicalBook) book).getCover());
+                preparedStatement.setInt(2, ((PhysicalBook) book).getStock());
                 preparedStatement.executeUpdate();
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean update(Book newBook, Book oldBook) {
+        String sql = "UPDATE audio_book SET id = ?, title = ?, author = ?, publishedDate = ?, price = ? WHERE id = ?;";
+        try {
+            PreparedStatement preparedStatement = null;
+            if (newBook instanceof AudioBook) {
+                sql = "UPDATE audio_book SET id = ?, runTime = ? WHERE id = ? and runTime = ?;";
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setLong(1, newBook.getId());
+                preparedStatement.setInt(2, ((AudioBook)newBook).getRunTime());
+                preparedStatement.setLong(3, oldBook.getId());
+                preparedStatement.setInt(4, ((AudioBook)oldBook).getRunTime());
+            } else if (newBook instanceof EBook) {
+                sql = "UPDATE ebook SET id = ?, format = ? WHERE id = ? and format = ?;";
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setLong(1, newBook.getId());
+                preparedStatement.setString(2, ((EBook)newBook).getFormat());
+                preparedStatement.setLong(3, oldBook.getId());
+                preparedStatement.setString(4, ((EBook)oldBook).getFormat());
+            } else if (newBook instanceof PhysicalBook) {
+                sql = "UPDATE physical_book SET id = ?, cover = ?, stock = ? WHERE id = ? and cover = ?;";
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setLong(1, newBook.getId());
+                preparedStatement.setString(2, ((PhysicalBook)newBook).getCover());
+                preparedStatement.setInt(3, ((PhysicalBook)newBook).getStock());
+                preparedStatement.setLong(4, oldBook.getId());
+                preparedStatement.setString(5, ((PhysicalBook)oldBook).getCover());
+            } else {
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setLong(1, newBook.getId());
+                preparedStatement.setString(2, newBook.getTitle());
+                preparedStatement.setString(3, newBook.getAuthor());
+                preparedStatement.setDate(4, Date.valueOf(newBook.getPublishedDate()));
+                preparedStatement.setInt(5, newBook.getPrice());
+                preparedStatement.setLong(6, oldBook.getId());
+            }
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean delete(Book book, String table) {
+        String sql = "DELETE FROM " + table + " WHERE id = " + book.getId();
+        switch (table) {
+            case PHYSICAL_BOOK:
+                sql += " AND cover = '" + ((PhysicalBook) book).getCover() + "'";
+                break;
+            case AUDIO_BOOK:
+                sql += " AND runTime = " + ((AudioBook) book).getRunTime();
+                break;
+            case EBOOK:
+                sql += " AND format = '" + ((EBook) book).getFormat() + "'";
+                break;
+        }
+        try {
+            Statement statement = connection.createStatement();
+            statement.execute(sql);
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
