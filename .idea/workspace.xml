@@ -4,28 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40019402-837e-4fd1-a222-46a158382d39" name="Changes" comment="added CRUD on books and creating a report on their sales">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/controller/LogOutButtonListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/user/EmployeeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/repository/user/EmployeeRepositoryMySQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/service/user/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/service/user/AdminServiceMySQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project1/view/AdminView.java" afterDir="false" />
+    <list default="true" id="40019402-837e-4fd1-a222-46a158382d39" name="Changes" comment="added CRUD on employees and creating a report on all sales">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/security/RightsRolesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/security/RightsRolesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/security/RightsRolesRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/security/RightsRolesRepositoryMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/user/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/user/UserRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/user/UserRepositoryMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/service/user/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/service/user/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/service/user/AuthenticationServiceMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/service/user/AuthenticationServiceMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/service/user/EmployeeServiceMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/service/user/EmployeeServiceMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/view/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/view/CustomerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project1/view/EmployeeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/view/EmployeeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryCacheDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/Cache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMockTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMySQLTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,6 +164,7 @@
       <workItem from="1701415965392" duration="17965000" />
       <workItem from="1701508267436" duration="4212000" />
       <workItem from="1701519349015" duration="6764000" />
+      <workItem from="1701526185902" duration="807000" />
     </task>
     <task id="LOCAL-00001" summary="BookRepositoryMySQL done. In unit testing find by id needs to be fixed">
       <created>1699431561031</created>
@@ -241,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701440910816</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added CRUD on employees and creating a report on all sales">
+      <created>1701526246501</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701526246501</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +252,8 @@
     <MESSAGE value="changed directory" />
     <MESSAGE value="added view books and buy books for customer" />
     <MESSAGE value="added CRUD on books and creating a report on their sales" />
-    <option name="LAST_COMMIT_MESSAGE" value="added CRUD on books and creating a report on their sales" />
+    <MESSAGE value="added CRUD on employees and creating a report on all sales" />
+    <option name="LAST_COMMIT_MESSAGE" value="added CRUD on employees and creating a report on all sales" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
