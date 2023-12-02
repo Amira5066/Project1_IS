@@ -63,6 +63,7 @@ public class EmployeeController {
         this.employeeView.addDeleteBooksButtonListener(new DeleteBookButtonListener());
         this.employeeView.addEditBooksButtonListener(new EditBookButtonListener());
         this.employeeView.addCreateReportButtonListener(new CreateReportButtonListener());
+        this.employeeView.addLogOutButtonListener(new LogOutButtonListener());
 
         this.textFields = employeeView.getTextFields();
 

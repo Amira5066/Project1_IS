@@ -1,6 +1,5 @@
 package project1.repository.user;
 
-import project1.model.EmployeeReport;
 import project1.model.User;
 
 import java.util.*;
@@ -16,8 +15,8 @@ public interface UserRepository {
     void removeAll();
 
     boolean existsByUsername(String username);
-
-    boolean updateSales(Long id, int price);
-
-    EmployeeReport findReportById(Long id);
+    User findByUsername(String username);
+    boolean editUser(String newUsername, Long id);
+    boolean deleteUser(Long id);
+    List<User> findByRole(String role);
 }

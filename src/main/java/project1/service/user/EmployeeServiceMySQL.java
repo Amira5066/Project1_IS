@@ -5,25 +5,25 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Table;
 import project1.model.EmployeeReport;
-import project1.repository.user.UserRepository;
+import project1.repository.user.EmployeeRepository;
 
 import java.io.FileNotFoundException;
 
 public class EmployeeServiceMySQL implements EmployeeService {
-    private final UserRepository userRepository;
+    private final EmployeeRepository employeeRepository;
 
-    public EmployeeServiceMySQL(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public EmployeeServiceMySQL(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
     }
     @Override
     public boolean updateSales(Long id, int price) {
-        return userRepository.updateSales(id, price);
+        return employeeRepository.updateSales(id, price);
     }
 
     @Override
     public void createReport(Long id) {
         try {
-            PdfDocument pdfDocument = new PdfDocument(new PdfWriter("report.pdf"));
+            PdfDocument pdfDocument = new PdfDocument(new PdfWriter("C:/Users/amira/Desktop/report.pdf"));
             Document document = new Document(pdfDocument);
             Table table = new Table(3);
 
@@ -31,7 +31,7 @@ public class EmployeeServiceMySQL implements EmployeeService {
             table.addHeaderCell("Books sold").setWidth(40);
             table.addHeaderCell("Income").setWidth(60);
 
-            EmployeeReport report = userRepository.findReportById(id);
+            EmployeeReport report = employeeRepository.findReportById(id);
             table.addCell(report.getUsername()).setWidth(60);
             table.addCell(String.valueOf(report.getBooksSold())).setWidth(40);
             table.addCell(String.valueOf(report.getIncome())).setWidth(60);

@@ -48,6 +48,7 @@ public class EmployeeView {
     private Button deleteBookButton;
     private Button editBookButton;
     private Button createReportButton;
+    private Button logOutButton;
     private Text actionTarget;
 
     private ObservableList<Book> books;
@@ -149,6 +150,7 @@ public class EmployeeView {
         deleteBookButton = new Button("Delete book");
         addBookButton = new Button("Add");
         editBookButton = new Button("Edit");
+        logOutButton = new Button("Log out");
     }
 
     private void setTextFields(){
@@ -226,7 +228,7 @@ public class EmployeeView {
         hb.setSpacing(3);
 
         hbText.getChildren().addAll(addId, addTitle, addAuthor, addPublishedDate, addPrice, addCover, addStock, addFormat, addRuntime, addBookButton, editBookButton);
-        hbReport.getChildren().addAll(createReportButton);
+        hbReport.getChildren().addAll(createReportButton, logOutButton);
 
         table.getColumns().addAll(idCol, titleCol, authorCol, publishedDateCol);
         vbox.getChildren().addAll(table, hb, hbText, hbReport);
@@ -287,6 +289,10 @@ public class EmployeeView {
 
     public void addEditBooksButtonListener(EventHandler<ActionEvent> editBookButtonListener) {
         editBookButton.setOnAction(editBookButtonListener);
+    }
+
+    public void addLogOutButtonListener(EventHandler<ActionEvent> buttonListener) {
+        logOutButton.setOnAction(buttonListener);
     }
 
     public List<TableColumn> getTableColumns() {

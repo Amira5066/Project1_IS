@@ -1,5 +1,6 @@
 package project1;
 
+import project1.controller.AdminController;
 import project1.controller.CustomerController;
 import project1.controller.EmployeeController;
 import project1.controller.LoginController;
@@ -11,14 +12,14 @@ import project1.repository.book.BookRepository;
 import project1.repository.book.BookRepositoryMySQL;
 import project1.repository.security.RightsRolesRepository;
 import project1.repository.security.RightsRolesRepositoryMySQL;
+import project1.repository.user.EmployeeRepository;
+import project1.repository.user.EmployeeRepositoryMySQL;
 import project1.repository.user.UserRepository;
 import project1.repository.user.UserRepositoryMySQL;;
 import project1.service.book.BookService;
 import project1.service.book.BookServiceImpl;
-import project1.service.user.AuthenticationService;
-import project1.service.user.AuthenticationServiceMySQL;
-import project1.service.user.EmployeeService;
-import project1.service.user.EmployeeServiceMySQL;
+import project1.service.user.*;
+import project1.view.AdminView;
 import project1.view.CustomerView;
 import project1.view.EmployeeView;
 import project1.view.LoginView;
@@ -31,6 +32,13 @@ public class Main extends Application {
     private static Stage window;
     private static BookService bookService;
     private static EmployeeService employeeService;
+    private static AdminService adminService;
+    private static LoginView loginView;
+    private static UserValidator userValidator;
+    private static UserRepository userRepository;
+    private static AuthenticationService authenticationService;
+    private static EmployeeRepository employeeRepository;
+
     public static void main(String[] args){
         launch(args);
     }
@@ -42,21 +50,18 @@ public class Main extends Application {
 
         final BookRepository bookRepository =new BookRepositoryMySQL(connection);
         final RightsRolesRepository rightsRolesRepository = new RightsRolesRepositoryMySQL(connection);
-        final UserRepository userRepository = new UserRepositoryMySQL(connection, rightsRolesRepository);
-        employeeService = new EmployeeServiceMySQL(userRepository);
+        employeeRepository = new EmployeeRepositoryMySQL(connection, rightsRolesRepository);
+        userRepository = new UserRepositoryMySQL(connection, rightsRolesRepository);
+        employeeService = new EmployeeServiceMySQL(employeeRepository);
 
-        final AuthenticationService authenticationService = new AuthenticationServiceMySQL(userRepository,
+        authenticationService = new AuthenticationServiceMySQL(userRepository,
                 rightsRolesRepository);
 
+        userValidator = new UserValidator(userRepository);
 
         bookService = new BookServiceImpl(bookRepository);
-//        switchToEmployeeView();
-
-        final LoginView loginView = new LoginView(window);
-
-        final UserValidator userValidator = new UserValidator(userRepository);
-
-        new LoginController(loginView, authenticationService, userValidator);
+        adminService = new AdminServiceMySQL(userRepository, rightsRolesRepository, employeeRepository);
+        switchToLoginView();
     }
 
     public static void switchToCustomerView() {
@@ -69,7 +74,13 @@ public class Main extends Application {
         new EmployeeController(employeeView, bookService, employeeService);
     }
 
+    public static void switchToAdminView() {
+        final AdminView adminView = new AdminView(window);
+        new AdminController(adminView, adminService);
+    }
     public static void switchToLoginView() {
+        loginView = new LoginView(window);
 
+        new LoginController(loginView, authenticationService, userValidator);
     }
 }

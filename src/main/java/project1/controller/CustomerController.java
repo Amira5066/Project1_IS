@@ -28,6 +28,7 @@ public class CustomerController {
         this.customerView.addViewEBooksButtonListener(new ViewEBooksButtonListener());
         this.customerView.addViewAudioBooksButtonListener(new ViewAudioBooksButtonListener());
         this.customerView.addBuyBooksButtonListener(new BuyBookButtonListener());
+        this.customerView.addLogOutButtonListener(new LogOutButtonListener());
     }
 
     private class ViewBooksButtonListener implements EventHandler<ActionEvent> {

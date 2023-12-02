@@ -112,7 +112,7 @@ public class RightsRolesRepositoryMySQL implements RightsRolesRepository {
                 insertUserRoleStatement.executeUpdate();
             }
         } catch (SQLException e) {
-
+            e.printStackTrace();
         }
     }
 
@@ -129,7 +129,7 @@ public class RightsRolesRepositoryMySQL implements RightsRolesRepository {
             }
             return roles;
         } catch (SQLException e) {
-
+            e.printStackTrace();
         }
         return null;
     }
@@ -142,6 +142,18 @@ public class RightsRolesRepositoryMySQL implements RightsRolesRepository {
             insertStatement.setLong(1, roleId);
             insertStatement.setLong(2, rightId);
             insertStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteRoles(Long id) {
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("DELETE FROM user_role WHERE user_id = ?;");
+            preparedStatement.setLong(1, id);
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
 
         }

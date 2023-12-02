@@ -38,11 +38,14 @@ public class CustomerView {
     private TableColumn stockCol;
     private TableColumn priceCol;
     private HBox hb;
+    private HBox hbLogOut;
     private Button viewBooksButton;
     private Button viewAudioBooksButton;
     private Button viewEBooksButton;
     private Button viewPhysicalBooksButton;
     private Button buyBookButton;
+    private Button logOutButton;
+
     private Text actionTarget;
 
     private ObservableList<Book> books;
@@ -83,6 +86,7 @@ public class CustomerView {
     private void initializeFields(VBox vbox){
         bookType = BOOK;
         hb = new HBox();
+        hbLogOut = new HBox();
 
         table = new TableView<>();
         table.setEditable(false);
@@ -128,6 +132,7 @@ public class CustomerView {
         viewEBooksButton = new Button("View ebooks");
         viewPhysicalBooksButton = new Button("View physical books");
         buyBookButton = new Button("Buy Book");
+        logOutButton = new Button("Log out");
 
         actionTarget = new Text();
         actionTarget.setFill(Color.FIREBRICK);
@@ -135,8 +140,10 @@ public class CustomerView {
         hb.getChildren().addAll(viewBooksButton, viewPhysicalBooksButton, viewAudioBooksButton, viewEBooksButton, buyBookButton, actionTarget);
         hb.setSpacing(3);
 
+        hbLogOut.getChildren().add(logOutButton);
+
         table.getColumns().addAll(idCol, titleCol, authorCol, publishedDateCol);
-        vbox.getChildren().addAll(table, hb);
+        vbox.getChildren().addAll(table, hb, hbLogOut);
     }
 
     public void setBooks(List<Book> books, String bookType) {
@@ -170,6 +177,10 @@ public class CustomerView {
 
     public void addViewAudioBooksButtonListener(EventHandler<ActionEvent> viewButtonListener) {
         viewAudioBooksButton.setOnAction(viewButtonListener);
+    }
+
+    public void addLogOutButtonListener(EventHandler<ActionEvent> buttonListener) {
+        logOutButton.setOnAction(buttonListener);
     }
 
     public Book getSelectedItem() {

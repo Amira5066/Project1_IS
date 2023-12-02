@@ -10,8 +10,7 @@ import project1.view.LoginView;
 
 import java.util.List;
 
-import static project1.database.Constants.Roles.CUSTOMER;
-import static project1.database.Constants.Roles.EMPLOYEE;
+import static project1.database.Constants.Roles.*;
 
 public class LoginController {
 
@@ -45,11 +44,14 @@ public class LoginController {
                 id = user.getId();
                 loginView.setActionTargetText("LogIn Successful!");
                 switch (user.getRoles().get(0).getRole()) {
-                    case CUSTOMER:
-                        Main.switchToCustomerView();
+                    case ADMINISTRATOR:
+                        Main.switchToAdminView();
                         break;
                     case EMPLOYEE:
                         Main.switchToEmployeeView();
+                        break;
+                    case CUSTOMER:
+                        Main.switchToCustomerView();
                         break;
                 }
             }
