@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40019402-837e-4fd1-a222-46a158382d39" name="Changes" comment="" />
+    <list default="true" id="40019402-837e-4fd1-a222-46a158382d39" name="Changes" comment="added CRUD on employees and creating a report on all sales">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryCacheDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project1/repository/book/BookRepositoryMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project1/repository/book/Cache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMockTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/repository/BookRepositoryMySQLTest.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,20 +24,110 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project1" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project1" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project1" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2XbuTtplYiwAKlRpuwcgDc0rnMo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/faculta/an 3/sem 1/IS/project1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;,
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="project1 [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.project1 [run]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -37,8 +136,133 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1698910114772</updated>
-      <workItem from="1698910115964" duration="1000" />
+      <workItem from="1698910115964" duration="963000" />
+      <workItem from="1698941278702" duration="767000" />
+      <workItem from="1699082478222" duration="4240000" />
+      <workItem from="1699091349357" duration="2057000" />
+      <workItem from="1699290272289" duration="558000" />
+      <workItem from="1699376660479" duration="4281000" />
+      <workItem from="1699387307503" duration="35000" />
+      <workItem from="1699429858762" duration="2399000" />
+      <workItem from="1699545949703" duration="336000" />
+      <workItem from="1699546298145" duration="3238000" />
+      <workItem from="1699785662801" duration="13008000" />
+      <workItem from="1699819139472" duration="2732000" />
+      <workItem from="1699857944078" duration="4340000" />
+      <workItem from="1699977003368" duration="65000" />
+      <workItem from="1700150669298" duration="4079000" />
+      <workItem from="1700636505579" duration="2892000" />
+      <workItem from="1700639675930" duration="120000" />
+      <workItem from="1700679580406" duration="1079000" />
+      <workItem from="1700755311111" duration="1645000" />
+      <workItem from="1700904368651" duration="22562000" />
+      <workItem from="1700935710409" duration="3068000" />
+      <workItem from="1700982729297" duration="6104000" />
+      <workItem from="1701078848750" duration="147000" />
+      <workItem from="1701333206914" duration="479000" />
+      <workItem from="1701334177536" duration="20165000" />
+      <workItem from="1701415965392" duration="17965000" />
+      <workItem from="1701508267436" duration="4212000" />
+      <workItem from="1701519349015" duration="6764000" />
+      <workItem from="1701526185902" duration="807000" />
     </task>
+    <task id="LOCAL-00001" summary="BookRepositoryMySQL done. In unit testing find by id needs to be fixed">
+      <created>1699431561031</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699431561031</updated>
+    </task>
+    <task id="LOCAL-00002" summary="find by id fixed">
+      <created>1699432057823</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699432057823</updated>
+    </task>
+    <task id="LOCAL-00003" summary="removeAll fixed">
+      <created>1699546623605</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699546623605</updated>
+    </task>
+    <task id="LOCAL-00004" summary="use TRUNCATE in removeAll">
+      <created>1699546838734</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699546838734</updated>
+    </task>
+    <task id="LOCAL-00005" summary="solution 1: AudioBook and Ebook extending class Book">
+      <created>1699798989093</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699798989093</updated>
+    </task>
+    <task id="LOCAL-00006" summary="repository logic">
+      <created>1699862286633</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699862286633</updated>
+    </task>
+    <task id="LOCAL-00007" summary="changed directory">
+      <created>1699977040450</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699977040450</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added view books and buy books for customer">
+      <created>1700989145687</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700989145688</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added CRUD on books and creating a report on their sales">
+      <created>1701440910816</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701440910816</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added CRUD on employees and creating a report on all sales">
+      <created>1701526246501</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701526246501</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="BookRepositoryMySQL done. In unit testing find by id needs to be fixed" />
+    <MESSAGE value="find by id fixed" />
+    <MESSAGE value="removeAll fixed" />
+    <MESSAGE value="use TRUNCATE in removeAll" />
+    <MESSAGE value="solution 1: AudioBook and Ebook extending class Book" />
+    <MESSAGE value="repository logic" />
+    <MESSAGE value="changed directory" />
+    <MESSAGE value="added view books and buy books for customer" />
+    <MESSAGE value="added CRUD on books and creating a report on their sales" />
+    <MESSAGE value="added CRUD on employees and creating a report on all sales" />
+    <option name="LAST_COMMIT_MESSAGE" value="added CRUD on employees and creating a report on all sales" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLSyntaxErrorException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
